@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const fizzbuzz = function (i) {
+        for (let n = 1; n <= i; n++) {
+          // n を 15 で割ったあまりが 0
+          if (n % 15 === 0) {
+            console.log(`fizzbuzz`)
+            // n を 3 で割ったあまりが 0
+          }
+          if (n % 3 === 0) {
+            console.log(`fizz`)
+            // n を 5 で割ったあまりが 0
+          }
+          if (n % 5 === 0) {
+            console.log(`buzz`)
+          } else {
+            console.log(n)
+          }
+        }
+      }
+
+      fizzbuzz(100)
+    </script>
+  </body>
+</html>
