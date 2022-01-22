@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=>, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--メイン-->
+    <div class="main-container">
+      <div class="list-container">
+        <div class="list-header">ギークサロン</div>
+        <div class="cards-container" id="cards-container1">
+          <!-- ここにカードを追加する -->
+        </div>
+        <div class="list-footer">
+          <div class="input-container">
+            <input type="text" class="input-todo" id="input-todo1" />
+          </div>
+        </div>
+      </div>
+
+      <!--サブ1-->
+      <div class="list-container">
+        <div class="list-header">大学</div>
+        <div class="cards-container" id="cards-container2">
+          <!-- ここにカードを追加する -->
+        </div>
+        <div class="list-footer">
+          <div class="input-container">
+            <input type="text" class="input-todo" id="input-todo2" />
+          </div>
+        </div>
+      </div>
+      <!--サブ2-->
+
+      <div class="list-container">
+        <div class="list-header">家事</div>
+        <div class="cards-container" id="cards-container3">
+          <!-- ここにカードを追加する -->
+        </div>
+        <div class="list-footer">
+          <div class="input-container">
+            <input type="text" class="input-todo" id="input-todo3" />
+          </div>
+        </div>
+      </div>
+      <!-- 省略 -->
+    </div>
+
+    <script>
+      const inputElement1 = document.getElementById("input-todo1")
+      const inputElement2 = document.getElementById("input-todo2")
+      const inputElement3 = document.getElementById("input-todo3")
+      const container1 = document.getElementById("cards-container1")
+      const container2 = document.getElementById("cards-container2")
+      const container3 = document.getElementById("cards-container3")
+
+      //enterを押したら
+      window.onkeydown = function (event1) {
+        if (event1.key === "Enter") {
+          //cardを作成
+
+          const card = createCard(inputElement1.value)
+          container1.append(card)
+
+          //入力欄を空にする
+          inputElement1.value = ""
+        }
+      }
+
+      window.onkeydown = function (event2) {
+        if (event2.key === "Enter") {
+          //cardを作成
+
+          const card = createCard(inputElement2.value)
+          container2.append(card)
+
+          //入力欄を空にする
+          inputElement2.value = ""
+        }
+      }
+
+      window.onkeydown = function (event3) {
+        if (event3.key === "Enter") {
+          //cardを作成
+
+          const card = createCard(inputElement3.value)
+          container3.append(card)
+
+          //入力欄を空にする
+          inputElement3.value = ""
+        }
+      }
+      //共通の処理・テキストからカードを作成する
+      const createCard = function (text) {
+        //カードの枠を作る
+        const card = document.createElement("div")
+        card.className = "card"
+
+        //todo を作成
+        const todo = document.createElement("div")
+        todo.className = "todo"
+        todo.textContent = text
+        //todoをカードの中に追加する
+        card.append(todo)
+
+        //deleteを作成
+        const deleteButton = document.createElement("div")
+        deleteButton.className = "delete"
+
+        //delete を押したときの処理を登録
+        deleteButton.onclick = function () {
+          //カード削除
+          card.remove()
+        }
+        //削除ボタンをcard の中に追加
+        card.append(deleteButton)
+
+        return card
+      }
+    </script>
+  </body>
+</html>
