@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=>, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="list-container">
+        <div class="list-header">ギークサロン</div>
+        <div class="cards-container" id="cards-container">
+          <!-- ここにカードを追加する -->
+        </div>
+        <div class="list-footer">
+          <div class="input-container">
+            <input type="text" class="input-todo" id="input-todo" />
+            <div class="input-button" id="add-button">追加</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 省略 -->
+    </div>
+    <script>
+      const inputElement = document.getElementById("input-todo")
+      const container = document.getElementById("cards-container")
+      const addbutton = document.getElementById("add-button")
+
+      //追加ボタンを押したら
+      addbutton.onclick = function () {
+        //入力欄の値(テキスト)を取り出して、text に入れる
+        const text = inputElement.value
+
+        //cardを作成
+        const card = createCard(inputElement.value)
+        container.append(card)
+        
+        //入力欄を空にする
+        inputElement.value = ""
+      
+        //共通の処理・テキストからカードを作成する
+        const createCard = function(text){
+        //カードの枠を作る
+        const card =document.createElement("div")
+        card.className="card"
+
+        }
+        //todo を作成
+        const todo = document.createElement("div")
+        todo.className = "todo"
+        todo.textContent = text
+        
+        //todoをカードの中に追加する
+        card.append(todo)
+
+        //deleteを作成
+        const deletebutton = document.createElement("div")
+        deletebutton.classname = "delete"
+
+        //delete を押したときの処理を登録
+        deletebutton.onclick = function () {
+          //カード削除
+          card.remove()
+        }
+
+        
+        //cardをcontainerの中に追加する
+
+        //削除ボタンをcard の中に追加
+        card.append(deletebutton)
+
+        return card
+        }
+    </script>
+  </body>
+</html>
