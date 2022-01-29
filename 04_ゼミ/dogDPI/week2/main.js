@@ -1,36 +1,41 @@
-const choice1 = document.getElementById("choice-1")
-const choice2 = document.getElementById("choice-2")
-const choice3 = document.getElementById("choice-3")
-const choice4 = document.getElementById("choice-4")
-const feedback = document.getElementById("feedback")
+const feedback = document.getElementById("feedback1")
 
-// 正解を判定する
-// feedback の内容
-const feedbacks = [
-  "残念！ゴリアテは、旧約聖書に登場するダビデに石で殺される巨人だよ。",
-  "残念！ゼニガメは、クサガメまたはニホンイシガメの幼体だよ。",
-  "正解！ガニメデは、木星の第三惑星だよ！",
-  "残念！なんちゃらかんちゃら",
-]
+const container = document.getElementById("card-container1")
 
-// 正解を判定する
-const choose = function (choiceNumber) {
-  feedback.textContent = feedbacks[choiceNumber]
+//選択肢を作成
+let sentaku =["ゴリアテ","ゼニガメ","ガニメデ","プラリネ"]
+let kotae= ["残念！ゴリアテは、旧約聖書に登場するダビデに石で殺される巨人だよ。",
+             "残念！ゼニガメは、クサガメまたはニホンイシガメの幼体だよ。",
+             "正解！ガニメデは、木星の第三惑星だよ！",
+              "残念！なんちゃらかんちゃ"]
+
+container.append(Button)
+container1.append(Button1)
+container2.append(Button2)
+container3.append(Button3)
+
+const createbutton = function (text) {
+  //選択肢の数だけボタンを作る
+  const button1 = document.createElement("button")
+  for (let i = 0; i<Array.length ; i ++){
+    kazu = i
+  }
+
+  .append(container)
+
+Button.onclick = function () {
+  feedback.textContent =
+    ""
 }
 
-choice1.onclick = function () {
-  // 0 番目の選択肢を選択
-  choose(0)
+Button1.onclick = function () {
+  feedback1.textContent =
+    ""
 }
-choice2.onclick = function () {
-  // 1 番目の選択肢を選択
-  choose(1)
+Button2.onclick = function () {
+  feedback2.textContent = ""
 }
-choice3.onclick = function () {
-  // 2 番目の選択肢を選択
-  choose(2)
+Button3.onclick = function () {
+  feedback3.textContent =
 }
-choice4.onclick = function () {
-  // 3 番目の選択肢を選択
-  choose(3)
 }
