@@ -29,9 +29,8 @@ choice2.onclick = function () {
 choice3.onclick = function () {
   // 2 番目の選択肢を選択
   choose(2)
-
-  choice4.onclick = function () {
-    // 3 番目の選択肢を選択
-    choose(3)
-  }
+}
+choice4.onclick = function () {
+  // 3 番目の選択肢を選択
+  choose(3)
 }

@@ -10,64 +10,44 @@
     <div class="main-container">
       <div class="list-container">
         <div class="list-header">ギークサロン</div>
-        <div class="cards-container" id="cards-container">
+        <div class="cards-container" id="cards-container1">
           <!-- ここにカードを追加する -->
         </div>
         <div class="list-footer">
           <div class="input-container">
-            <input type="text" class="input-todo" id="input-todo" />
-            <div class="input-button" id="add-button">追加</div>
+            <input type="text" class="input-todo" id="input-todo1" />
+            <button class="input-button" id="add-button1">追加</button>
           </div>
         </div>
       </div>
 
-      <!-- 省略 -->
+      <div class="list-container">
+        <div class="list-header">ギークサロン</div>
+        <div class="cards-container" id="cards-container2">
+          <!-- ここにカードを追加する -->
+        </div>
+        <div class="list-footer">
+          <div class="input-container">
+            <input type="text" class="input-todo" id="input-todo2" />
+            <button class="input-button" id="add-button2">追加</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-container">
+        <div class="list-header">ギークサロン</div>
+        <div class="cards-container" id="cards-container3">
+          <!-- ここにカードを追加する -->
+        </div>
+        <div class="list-footer">
+          <div class="input-container">
+            <input type="text" class="input-todo" id="input-todo3" />
+            <button class="input-button" id="add-button3">追加</button>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <script>
-      const inputElement = document.getElementById("input-todo")
-      const container = document.getElementById("cards-container")
-
-      //enterを押したら
-      window.document.onkeydown = function (event) {
-        if (event.key === "Enter") {
-          //cardを作成
-          const card = createCard(inputElement.value)
-          container.append(card)
-
-          //入力欄を空にする
-          inputElement.value = ""
-        }
-      }
-      //共通の処理・テキストからカードを作成する
-      const createCard = function (text) {
-        //カードの枠を作る
-        const card = document.createElement("div")
-        card.className = "card"
-
-        //todo を作成
-        const todo = document.createElement("div")
-        todo.className = "todo"
-        todo.textContent = text
-
-        //todoをカードの中に追加する
-        card.append(todo)
-
-        //deleteを作成
-        const deletebutton = document.createElement("div")
-        deletebutton.className = "delete"
-
-        //delete を押したときの処理を登録
-        deletebutton.onclick = function () {
-          //カード削除
-          card.remove()
-        }
-
-        //削除ボタンをcard の中に追加
-        card.append(deletebutton)
-
-        return card
-      }
-    </script>
+    <script src="main1.js"></script>
   </body>
 </html>
