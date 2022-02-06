@@ -14,9 +14,9 @@ container1.append(Button1)
 container2.append(Button2)
 container3.append(Button3)
 
-const createbutton = function (text) {
   //選択肢の数だけボタンを作る
-  const button1 = document.createElement("button")
+  const button = document.createElement("button")
+
   for (let i = 0; i<Array.length ; i ++){
     kazu = i
   }
@@ -37,5 +37,4 @@ Button2.onclick = function () {
 }
 Button3.onclick = function () {
   feedback3.textContent =
-}
 }

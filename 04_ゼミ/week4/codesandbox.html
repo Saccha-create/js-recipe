@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeSandboxを作ってみよう！</title>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="tow-columns">
+    <div class="file-navigation">
+      <div class="file-navigation__buttons">
+        <h1 class="file-navigation__title-text">Files</h1>
+        <input
+          type="text"
+          class="file-navigation__new-file-input"
+          id="add-new-file-input"
+        />
+        <button
+          class="file-navigation__new-file-button"
+          id="add-new-file-button"
+        >
+          Make a new file
+        </button>
+      </div>
+      <nav>
+        <ul class="file-navigation__list" id="file-navigation-list">
+          <li>
+            <button
+              class="file-navigation__file"
+              id="editing-file-title"
+              ,data-selected="true"
+            >
+              index.html
+            </button>
+          </li>
+          <li>
+            <button class="file-navigation__file" ,id="editing-file-title2">
+              package.json
+            </button>
+          </li>
+          <li>
+            <button class="file-navigation__file" ,id="editing-file-title3">
+              sandbox.config.json
+            </button>
+          </li>
+          <li>
+            <button class="file-navigation__file" ,id="editing-file-title4">
+              style.css
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main class="file-content">
+      <h1 class="file-content__now-editing-file" id="editing-file-title">
+        <!---ここにtitleを表示-->
+      </h1>
+      <textarea class="file-content__input-field" id="editing-file-content">
+        <!--ここにcontentを表示-->
+      </textarea>
+    </main>
+    <script>
+      const files = [
+        {
+          title: "index.html",
+          content: "index.htmlの内容です",
+        },
+        {
+          title: "package.json",
+          content: "package.jsonの内容です",
+        },
+        {
+          title: "sandbox.config.json",
+          content: "sandbox.config.jsonの内容です",
+        },
+        {
+          title: "style.css",
+          content: "style.cssの内容です",
+        },
+      ]
+
+      const fileNavigationList = document.getElementById("file-navigation-list")
+      const editingFileTitle = document.getElementById("editing-file-title")
+      const editingFileContent = document.getElementById("editing-file-content")
+      const addNewFileButton = document.getElementById("add-new-file-button")
+      const addNewFileInput = document.getElementById("add-new-file-input")
+
+      const fileNavigationFile = document.getElementById(
+        "file-navigation__file",
+      )
+      const fileNavigationFile2 = document.getElementById(
+        "file-navigation__file2",
+      )
+      const fileNavigationFile3 = document.getElementById(
+        "file-navigation__file3",
+      )
+      const fileNavigationFile4 = document.getElementById(
+        "file-navigation__file4",
+      )
+
+      addNewFileButton.onclick = function () {
+        // 新しいファイルを作成する処理
+      }
+
+      const loadFiles = function (choiceNumber) {
+        // filesを読み込む処理
+        //filesのcontentとtitleが表示
+        editingFileTitle.textContent = files[choiceNumber].title
+        editingFileContent.textContent = files[choiceNumber].content
+      }
+
+      fileNavigationFile.onclick = function () {
+        //0番目の選択肢を選択
+        loadFiles(0)
+      }
+      fileNavigationFile2.onclick = function () {
+        //0番目の選択肢を選択
+        loadFiles(1)
+      }
+      fileNavigationFile3.onclick = function () {
+        //0番目の選択肢を選択
+        loadFiles(2)
+      }
+      fileNavigationFile4.onclick = function () {
+        //0番目の選択肢を選択
+        loadFiles(3)
+      }
+    </script>
+  </body>
+</html>
