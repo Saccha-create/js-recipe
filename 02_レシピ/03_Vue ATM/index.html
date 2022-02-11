@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>入力画面</h1>
+      <!--入力セクション input の値はnumber(半角数字)!-->
+      <section id="v-model">
+        <input type="number" v-model="inputValue" />
+        <div>入力額:{{ inputValue }}円</div>
+        <div>
+          <button v-on:click="countUp">入金</button>
+          <button v-on:click="countDown" v-bind:disabled="active">出金</button>
+        </div>
+      </section>
+      <h1>口座残高</h1>
+      <!--残高セクション-->
+      <section id="output">
+        <div>残高:{{ zandaka }}円</div>
+      </section>
+
+    <h1>取引記録</h1>
+    <!--記録セクション-->
+    <section id="kiroku">
+      <div v-for="dialog in dialogs">日付:{{ dialog.date}}<br>
+                                    操作:{{ dialog.type}}<br>
+                                    金額:{{dialog.money}}
+                                    <hr>
+      </div>
+    </div>
+   </section>
+  </body>
+  <script src="https:/unpkg.com/vue@3.2.20"></script>
+  <script src="main.js"></script>
+</html>
